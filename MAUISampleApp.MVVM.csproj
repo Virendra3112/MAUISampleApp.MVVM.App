@@ -52,8 +52,6 @@
 	  <Folder Include="Helpers\" />
 	  <Folder Include="CustomControls\" />
 	  <Folder Include="Models\" />
-	  <Folder Include="Services\Interfaces\" />
-	  <Folder Include="Services\Implementations\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Views\" />
 	</ItemGroup>

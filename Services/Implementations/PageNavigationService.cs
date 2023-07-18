@@ -10,8 +10,6 @@ namespace MAUISampleApp.MVVM.Services.Implementations
 {
     public class PageNavigationService : IPageNavigationService
     {
-        public string CurrentPageKey { get; set; }
-
         protected INavigation Navigation
         {
             get
@@ -33,29 +31,22 @@ namespace MAUISampleApp.MVVM.Services.Implementations
             throw new InvalidOperationException("No pages to navigate back to!");
         }
 
-        public async void NavigateTo(Page pageKey)
+        public async Task NavigateTo(Page pageKey)
         {
             await Navigation.PushAsync(pageKey);
         }
 
-        public void NavigateTo(Page pageKey, object parameter)
+        public Task NavigateTo(Page pageKey, object parameter)
         {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                Debugger.Break();
-            }
+            throw new Exception();
         }
 
-        public void PopToRoot()
+        public Task PopToRoot()
         {
-            throw new NotImplementedException();
+            if (Navigation.NavigationStack.Count > 1)
+                return Navigation.PopToRootAsync();
+
+            throw new InvalidOperationException("No pages to navigate back to!");
         }
     }
-
-    public interface IModalPage { }
 }

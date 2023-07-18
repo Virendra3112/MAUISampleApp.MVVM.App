@@ -3,8 +3,8 @@
     public interface IPageNavigationService
     {
         Task GoBack();
-        void NavigateTo(Page pageKey);
-        void NavigateTo(Page pageKey, object parameter);
-        void PopToRoot();
+        Task NavigateTo(Page pageKey);
+        Task NavigateTo(Page pageKey, object parameter);
+        Task PopToRoot();
     }
 }

@@ -2,7 +2,7 @@
 {
     public interface IPageNavigationService
     {
-        void GoBack();
+        Task GoBack();
         void NavigateTo(Page pageKey);
         void NavigateTo(Page pageKey, object parameter);
         void PopToRoot();

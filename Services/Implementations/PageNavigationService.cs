@@ -25,9 +25,12 @@ namespace MAUISampleApp.MVVM.Services.Implementations
             }
         }
 
-        public void GoBack()
+        public Task GoBack()
         {
-            throw new NotImplementedException();
+            if (Navigation.NavigationStack.Count > 1)
+                return Navigation.PopAsync();
+
+            throw new InvalidOperationException("No pages to navigate back to!");
         }
 
         public async void NavigateTo(Page pageKey)

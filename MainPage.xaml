@@ -4,7 +4,9 @@
              x:Class="MAUISampleApp.MVVM.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
+
+       
+        <!--<VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
@@ -35,7 +37,7 @@ S
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-        </VerticalStackLayout>
+        </VerticalStackLayout>-->
     </ScrollView>
 
 </ContentPage>

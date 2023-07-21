@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <Folder Include="CustomControls\" />
+	  <Folder Include="Platforms\Android\CustomRendrers\" />
 	</ItemGroup>
 
 	<ItemGroup>

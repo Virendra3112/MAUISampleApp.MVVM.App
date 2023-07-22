@@ -9,6 +9,9 @@ namespace MAUISampleApp.MVVM.Platforms.Android.Helpers
         {
             var builder = new ContainerBuilder();
             Init(builder);
+
+            Container = builder.Build();
+            builder = null;
         }
     }
 }

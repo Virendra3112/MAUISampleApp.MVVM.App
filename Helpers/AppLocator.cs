@@ -9,8 +9,8 @@ namespace MAUISampleApp.MVVM.Helpers
 
         protected static void Init(ContainerBuilder builder)
         {
-            RegisterServices(builder);
-            RegisterViewModel(builder);
+            //RegisterServices(builder);
+            //RegisterViewModel(builder);
         }
 
         private static void RegisterViewModel(ContainerBuilder builder)

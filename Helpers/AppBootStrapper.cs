@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using MAUISampleApp.MVVM.Services.Implementations;
+using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
 
 namespace MAUISampleApp.MVVM.Helpers
@@ -17,6 +19,14 @@ namespace MAUISampleApp.MVVM.Helpers
         /// </summary>
         private static void RegisterAppServices(ContainerBuilder containerBuilder)
         {
+            var nav = new PageNavigationService();
+            CreateNavigationService(nav);
+            containerBuilder.Register<IPageNavigationService>(c => nav).SingleInstance();
+        }
+
+        private static PageNavigationService CreateNavigationService(PageNavigationService navigationService)
+        {
+            return navigationService;
         }
 
         private static void RegisterAppViewModel(ContainerBuilder builder)

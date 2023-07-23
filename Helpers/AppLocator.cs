@@ -7,20 +7,15 @@ namespace MAUISampleApp.MVVM.Helpers
         public static Autofac.IContainer Container { get; set; }
 
 
-        protected static void Init(ContainerBuilder builder)
+        protected static void RegisterCommon(ContainerBuilder builder)
         {
-            //RegisterServices(builder);
-            //RegisterViewModel(builder);
+            RegisterServices(builder);
         }
 
-        private static void RegisterViewModel(ContainerBuilder builder)
-        {
-            throw new NotImplementedException();
-        }
 
-        private static void RegisterServices(ContainerBuilder builder)
+        private static void RegisterServices(ContainerBuilder containerBuilder)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

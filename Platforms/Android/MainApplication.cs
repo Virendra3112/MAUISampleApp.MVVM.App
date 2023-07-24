@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Runtime;
+using MAUISampleApp.MVVM.Platforms.Android.Helpers;
 
 namespace MAUISampleApp.MVVM;
 
@@ -11,5 +12,13 @@ public class MainApplication : MauiApplication
 	{
 	}
 
-	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+    public override void OnCreate()
+    {
+        base.OnCreate();
+
+        AndroidBootStrapper.Initialize();
+
+    }
+
+    protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 }

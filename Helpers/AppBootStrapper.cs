@@ -1,7 +1,9 @@
 ﻿using Autofac;
+using CommonServiceLocator;
 using MAUISampleApp.MVVM.Services.Implementations;
 using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
+using MAUISampleApp.MVVM.Views;
 
 namespace MAUISampleApp.MVVM.Helpers
 {
@@ -10,6 +12,8 @@ namespace MAUISampleApp.MVVM.Helpers
         protected static void Init(ContainerBuilder builder)
         {
             RegisterCommon(builder);
+
+            
             RegisterAppServices(builder);
             RegisterAppViewModel(builder);
         }
@@ -21,11 +25,16 @@ namespace MAUISampleApp.MVVM.Helpers
         {
             var nav = new PageNavigationService();
             CreateNavigationService(nav);
+
+            //ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
             containerBuilder.Register<IPageNavigationService>(c => nav).SingleInstance();
         }
 
         private static PageNavigationService CreateNavigationService(PageNavigationService navigationService)
         {
+            navigationService.Configure(nameof(DashboardPage), typeof(DashboardPage));
+
             return navigationService;
         }
 

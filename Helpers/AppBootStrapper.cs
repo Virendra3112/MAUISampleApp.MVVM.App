@@ -12,8 +12,6 @@ namespace MAUISampleApp.MVVM.Helpers
         protected static void Init(ContainerBuilder builder)
         {
             RegisterCommon(builder);
-
-            
             RegisterAppServices(builder);
             RegisterAppViewModel(builder);
         }
@@ -25,8 +23,6 @@ namespace MAUISampleApp.MVVM.Helpers
         {
             var nav = new PageNavigationService();
             CreateNavigationService(nav);
-
-            //ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             containerBuilder.Register<IPageNavigationService>(c => nav).SingleInstance();
         }

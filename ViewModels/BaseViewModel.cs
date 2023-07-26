@@ -20,7 +20,18 @@ namespace MAUISampleApp.MVVM.ViewModels
 
         public BaseViewModel()
         {
-            //PageNavigationService = ServiceLocator.Current.GetInstance<IPageNavigationService>();
+            try
+            {
+                //if (!ServiceLocator..<IPageNavigationService>())
+
+                    PageNavigationService = ServiceLocator.Current.GetInstance<IPageNavigationService>();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
         }
 
     }

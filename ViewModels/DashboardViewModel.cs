@@ -58,5 +58,19 @@ namespace MAUISampleApp.MVVM.ViewModels
             }
         }
 
+        public async Task<ImageSource> TakeScreenshotAsync()
+        {
+            if (Screenshot.Default.IsCaptureSupported)
+            {
+                IScreenshotResult screen = await Screenshot.Default.CaptureAsync();
+
+                Stream stream = await screen.OpenReadAsync();
+
+                return ImageSource.FromStream(() => stream);
+            }
+
+            return null;
+        }
+
     }
 }

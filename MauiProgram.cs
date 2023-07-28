@@ -1,4 +1,6 @@
 ﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Markup;
 using MAUISampleApp.MVVM.Services.Implementations;
 using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
@@ -7,24 +9,27 @@ namespace MAUISampleApp.MVVM;
 
 public static class MauiProgram
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>().UseMauiCommunityToolkit()
+    public static MauiApp CreateMauiApp()
+    {
+        var builder = MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .UseMauiCommunityToolkitMarkup()
+            .UseMauiCommunityToolkitCore()
             .ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            });
 
-		//register services
-		builder.Services.AddSingleton<IPageNavigationService, PageNavigationService>();
+        //register services
+        builder.Services.AddSingleton<IPageNavigationService, PageNavigationService>();
 
-		//register viewmodels
-		builder.Services.AddTransient<BaseViewModel>();
-		builder.Services.AddTransient<DashboardViewModel>();
+        //register viewmodels
+        builder.Services.AddTransient<BaseViewModel>();
+        builder.Services.AddTransient<DashboardViewModel>();
 
-		return builder.Build();
-	}
+        return builder.Build();
+    }
 }

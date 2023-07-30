@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUISampleApp.MVVM.Views.DashboardPage"
-             Title="Dashboard">
+             Title="Dashboard" x:Name="self">
     <ScrollView>
         <FlexLayout Wrap="Wrap" BindableLayout.ItemsSource="{Binding CategoryList}" Direction="Row"
                     JustifyContent="Center" AlignItems="Center" BackgroundColor="Transparent"

@@ -1,4 +1,5 @@
 ﻿using MAUISampleApp.MVVM.Models;
+using MAUISampleApp.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -41,9 +42,12 @@ namespace MAUISampleApp.MVVM.ViewModels
                 {
                     var model = obj as DashboardItem;
 
+                    await PageNavigationService.NavigateTo(new CustomNavigationBar());
+
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            { }
         }
 
         private async void NavigateTo(Page page, string pageName)

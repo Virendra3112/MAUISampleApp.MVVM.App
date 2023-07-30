@@ -4,6 +4,7 @@ using CommunityToolkit.Maui.Markup;
 using MAUISampleApp.MVVM.Services.Implementations;
 using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
+using MAUISampleApp.MVVM.Views;
 
 namespace MAUISampleApp.MVVM;
 
@@ -28,7 +29,14 @@ public static class MauiProgram
 
         //register viewmodels
         builder.Services.AddTransient<BaseViewModel>();
+
+        builder.Services.AddTransient<DashboardPage>();
         builder.Services.AddTransient<DashboardViewModel>();
+
+        builder.Services.AddTransient<CustomNavigationBar>();
+        builder.Services.AddTransient<CustomNavigationBarViewModel>();
+
+
 
         return builder.Build();
     }

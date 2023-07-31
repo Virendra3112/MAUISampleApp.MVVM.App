@@ -1,11 +1,6 @@
 ﻿using MAUISampleApp.MVVM.Models;
 using MAUISampleApp.MVVM.Views;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MAUISampleApp.MVVM.ViewModels
@@ -48,12 +43,12 @@ namespace MAUISampleApp.MVVM.ViewModels
                     {
                         NavigateToPage(model.page);
                     }
-
-                    //await PageNavigationService.NavigateTo(new CustomNavigationBar());
                 }
             }
             catch (Exception ex)
-            { }
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private async void NavigateToPage(Page page)
@@ -67,20 +62,5 @@ namespace MAUISampleApp.MVVM.ViewModels
                 Console.WriteLine(ex.Message);
             }
         }
-
-        //public async Task<ImageSource> TakeScreenshotAsync()
-        //{
-        //    if (Screenshot.Default.IsCaptureSupported)
-        //    {
-        //        IScreenshotResult screen = await Screenshot.Default.CaptureAsync();
-
-        //        Stream stream = await screen.OpenReadAsync();
-
-        //        return ImageSource.FromStream(() => stream);
-        //    }
-
-        //    return null;
-        //}
-
     }
 }

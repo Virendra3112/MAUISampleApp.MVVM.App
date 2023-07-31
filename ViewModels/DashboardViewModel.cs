@@ -26,15 +26,17 @@ namespace MAUISampleApp.MVVM.ViewModels
             MenuItemCommand = new Command(MenuSelected);
 
 
-            CategoryList = new ObservableCollection<DashboardItem>();
-            CategoryList.Add(new DashboardItem { ItemName = "Custom UI", Itemicon = "icon.png" });
-            CategoryList.Add(new DashboardItem { ItemName = "1 Item", Itemicon = "icon.png" });
-            CategoryList.Add(new DashboardItem { ItemName = "2 Item", Itemicon = "icon.png" });
-            CategoryList.Add(new DashboardItem { ItemName = "3 Item", Itemicon = "icon.png" });
+            CategoryList = new ObservableCollection<DashboardItem>
+            {
+                new DashboardItem { ItemName = "Custom UI", Itemicon = "icon.png", page = new CustomNavigationBar() },
+                new DashboardItem { ItemName = "1 Item", Itemicon = "icon.png" },
+                new DashboardItem { ItemName = "2 Item", Itemicon = "icon.png" },
+                new DashboardItem { ItemName = "3 Item", Itemicon = "icon.png" }
+            };
         }
 
 
-        private async void MenuSelected(object obj)
+        private void MenuSelected(object obj)
         {
             try
             {
@@ -42,39 +44,43 @@ namespace MAUISampleApp.MVVM.ViewModels
                 {
                     var model = obj as DashboardItem;
 
-                    await PageNavigationService.NavigateTo(new CustomNavigationBar());
+                    if (model != null && model.page != null)
+                    {
+                        NavigateToPage(model.page);
+                    }
 
+                    //await PageNavigationService.NavigateTo(new CustomNavigationBar());
                 }
             }
             catch (Exception ex)
             { }
         }
 
-        private async void NavigateTo(Page page, string pageName)
+        private async void NavigateToPage(Page page)
         {
             try
             {
-                //await Navigation.PushAsync(page);
+                await PageNavigationService.NavigateTo(page);
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public async Task<ImageSource> TakeScreenshotAsync()
-        {
-            if (Screenshot.Default.IsCaptureSupported)
-            {
-                IScreenshotResult screen = await Screenshot.Default.CaptureAsync();
+        //public async Task<ImageSource> TakeScreenshotAsync()
+        //{
+        //    if (Screenshot.Default.IsCaptureSupported)
+        //    {
+        //        IScreenshotResult screen = await Screenshot.Default.CaptureAsync();
 
-                Stream stream = await screen.OpenReadAsync();
+        //        Stream stream = await screen.OpenReadAsync();
 
-                return ImageSource.FromStream(() => stream);
-            }
+        //        return ImageSource.FromStream(() => stream);
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
     }
 }

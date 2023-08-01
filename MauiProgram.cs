@@ -1,6 +1,6 @@
-﻿using CommunityToolkit.Maui;
-using CommunityToolkit.Maui.Core;
-using CommunityToolkit.Maui.Markup;
+﻿//using CommunityToolkit.Maui;
+//using CommunityToolkit.Maui.Core;
+//using CommunityToolkit.Maui.Markup;
 using MAUISampleApp.MVVM.Services.Implementations;
 using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
@@ -15,9 +15,9 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
-            .UseMauiCommunityToolkit()
-            .UseMauiCommunityToolkitMarkup()
-            .UseMauiCommunityToolkitCore()
+            //.UseMauiCommunityToolkit()
+            //.UseMauiCommunityToolkitMarkup()
+            //.UseMauiCommunityToolkitCore()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

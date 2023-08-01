@@ -5,6 +5,8 @@ using MAUISampleApp.MVVM.Services.Implementations;
 using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
 using MAUISampleApp.MVVM.Views;
+using MetroLog;
+using MetroLog.Targets;
 
 namespace MAUISampleApp.MVVM;
 
@@ -12,6 +14,34 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        var config = new LoggingConfiguration();
+
+#if RELEASE
+    config.AddTarget(
+        LogLevel.Info, 
+        LogLevel.Fatal, 
+        new StreamingFileTarget(retainDays: 2);
+#else
+        // Will write logs to the Debug output
+        config.AddTarget(
+            LogLevel.Trace,
+            LogLevel.Fatal,
+            new TraceTarget());
+#endif
+
+        // will write logs to the console output (Logcat for android)
+        config.AddTarget(
+            LogLevel.Info,
+            LogLevel.Fatal,
+            new ConsoleTarget();
+
+        config.AddTarget(
+            LogLevel.Info,
+            LogLevel.Fatal,
+            new MemoryTarget(2048);
+
+        LoggerFactory.Initialize(config);
+
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()

@@ -52,7 +52,14 @@ namespace MAUISampleApp.MVVM.Services.Implementations
 
         public void LogDetails(string className, string methodName, string message, Exception ex)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Logitem.Trace(message, className, methodName, message, ex);
+            }
+            catch (Exception exce)
+            {
+                Logitem.Error("LogDetails Exception", exce);
+            }
         }
 
         public void LogError(string className, string methodName, Exception ex)

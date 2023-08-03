@@ -6,6 +6,7 @@ using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
 using MAUISampleApp.MVVM.Views;
 using MetroLog;
+using MetroLog.MicrosoftExtensions;
 using MetroLog.Targets;
 
 namespace MAUISampleApp.MVVM;
@@ -33,12 +34,12 @@ public static class MauiProgram
         config.AddTarget(
             LogLevel.Info,
             LogLevel.Fatal,
-            new ConsoleTarget();
+            new ConsoleTarget());
 
         config.AddTarget(
             LogLevel.Info,
             LogLevel.Fatal,
-            new MemoryTarget(2048);
+            new MemoryTarget(2048));
 
         LoggerFactory.Initialize(config);
 
@@ -53,6 +54,29 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
+
+        //builder.Logging
+        //  .AddTraceLogger(
+        //      options =>
+        //      {
+        //          options.MinLevel = (Microsoft.Extensions.Logging.LogLevel?)LogLevel.Trace;
+        //          options.MaxLevel = LogLevel.Critical;
+        //      }) // Will write to the Debug Output
+        //  .AddInMemoryLogger(
+        //      options =>
+        //      {
+        //          options.MaxLines = 1024;
+        //          options.MinLevel = (Microsoft.Extensions.Logging.LogLevel?)LogLevel.Debug;
+        //          options.MaxLevel = LogLevel.Critical;
+        //      })
+        //  .AddStreamingFileLogger(
+        //      options =>
+        //      {
+        //          options.RetainDays = 2;
+        //          options.FolderPath = Path.Combine(
+        //              FileSystem.CacheDirectory,
+        //              "MetroLogs");
+        //      });
 
         //register services
         builder.Services.AddSingleton<IPageNavigationService, PageNavigationService>();

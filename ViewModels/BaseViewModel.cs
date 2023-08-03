@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace MAUISampleApp.MVVM.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged//, ObservableObject
     {
         #region propertychanged
         public event PropertyChangedEventHandler PropertyChanged;

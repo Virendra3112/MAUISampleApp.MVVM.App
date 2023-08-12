@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Runtime;
-//using MAUISampleApp.MVVM.Platforms.Android.Helpers;
 
 namespace MAUISampleApp.MVVM;
 

@@ -1,5 +1,4 @@
-﻿//using CommonServiceLocator;
-using MAUISampleApp.MVVM.Services.Interfaces;
+﻿using MAUISampleApp.MVVM.Services.Interfaces;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -22,13 +21,6 @@ namespace MAUISampleApp.MVVM.ViewModels
         {
             try
             {
-                //if (!ServiceLocator..<IPageNavigationService>())
-
-                // PageNavigationService = this.h
-                //this.Handler.MauiContext.Services.GetServices<ISettingsService>();
-
-                //ServiceLocator.Current.GetInstance<IPageNavigationService>();
-
                 PageNavigationService = Application.Current.MainPage
                            .Handler
                            .MauiContext

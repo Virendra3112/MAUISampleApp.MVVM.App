@@ -15,9 +15,6 @@ public class MainApplication : MauiApplication
     public override void OnCreate()
     {
         base.OnCreate();
-
-        //AndroidBootStrapper.Initialize();
-
     }
 
     protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();

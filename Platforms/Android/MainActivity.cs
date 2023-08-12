@@ -2,7 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
-using MAUISampleApp.MVVM.Platforms.Android.Helpers;
+//using MAUISampleApp.MVVM.Platforms.Android.Helpers;
 
 namespace MAUISampleApp.MVVM;
 
@@ -12,7 +12,7 @@ public class MainActivity : MauiAppCompatActivity
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-        AndroidBootStrapper.Initialize();
+        //AndroidBootStrapper.Initialize();
 
         //restrict screenshot
         Window.SetFlags(WindowManagerFlags.Secure, WindowManagerFlags.Secure);

@@ -79,16 +79,16 @@ public static class MauiProgram
         //      });
 
         //register services
-        builder.Services.AddTransient<IPageNavigationService, PageNavigationService>();
+        builder.Services.AddSingleton<IPageNavigationService, PageNavigationService>();
 
         //register viewmodels
-        builder.Services.AddTransient<BaseViewModel>();
+        builder.Services.AddSingleton<BaseViewModel>();
 
-        builder.Services.AddTransient<DashboardPage>();
-        builder.Services.AddTransient<DashboardViewModel>();
+        builder.Services.AddSingleton<DashboardPage>();
+        builder.Services.AddSingleton<DashboardViewModel>();
 
-        builder.Services.AddTransient<CustomNavigationBar>();
-        builder.Services.AddTransient<CustomNavigationBarViewModel>();
+        builder.Services.AddSingleton<CustomNavigationBar>();
+        builder.Services.AddSingleton<CustomNavigationBarViewModel>();
 
 
 

@@ -106,4 +106,8 @@
 	  </PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Platforms\Android\Helpers\" />
+	</ItemGroup>
+
 </Project>

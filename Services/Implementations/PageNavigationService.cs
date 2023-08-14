@@ -68,11 +68,16 @@ namespace MAUISampleApp.MVVM.Services.Implementations
         public Task InitializeAsync()
         {
             throw new NotImplementedException();
+
+
         }
 
         public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)
         {
-            throw new NotImplementedException();
+            return
+       routeParameters != null
+           ? Shell.Current.GoToAsync(route, routeParameters)
+           : Shell.Current.GoToAsync(route);
         }
     }
 }

@@ -91,7 +91,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<CustomNavigationBarViewModel>();
 
 
-
         return builder.Build();
     }
 }

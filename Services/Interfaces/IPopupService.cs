@@ -8,8 +8,9 @@ namespace MAUISampleApp.MVVM.Services.Interfaces
 {
     public interface IPopupService
     {
-        void DisplayAlert(string title, string message);
-        void DisplayAlert(string title, string message, string okButtonText, string canelButtonText);
+        void Init();
+        Task DisplayAlertPopup(string title, string message);
+        Task DisplayAlertPopup(string title, string message, string okButtonText, string canelButtonText);
 
     }
 }

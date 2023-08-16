@@ -80,6 +80,8 @@ public static class MauiProgram
 
         //register services
         builder.Services.AddSingleton<IPageNavigationService, PageNavigationService>();
+        builder.Services.AddSingleton<IPopupService, PopupService>();
+        builder.Services.AddSingleton<IHttpService, HttpService>();
 
         //register viewmodels
         builder.Services.AddSingleton<BaseViewModel>();

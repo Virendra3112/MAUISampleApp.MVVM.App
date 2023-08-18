@@ -10,19 +10,25 @@ namespace MAUISampleApp.MVVM.Services.Implementations
         {
             _httpClient = new HttpClient();
         }
-        public Task<HttpResponseMessage> GetAsync(string url)
+        public async Task<HttpResponseMessage> GetAsync(string url)
         {
             try
             {
-                var response = _httpClient.GetAsync(url);
+                var response = await _httpClient.GetAsync(url);
 
                 if (response == null)
                 {
-                    return null;
-                    //HttpStatusCode.BadRequest;
-                }
-                return response;
 
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        return response;
+                    }
+                    else
+                    {
+                        return null;// HttpStatusCode.BadGateway;
+                    }
+                }
+                return null;
             }
             catch (Exception ex)
             {

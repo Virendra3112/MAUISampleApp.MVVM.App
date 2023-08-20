@@ -1,4 +1,5 @@
-﻿using MAUISampleApp.MVVM.Services.Interfaces;
+﻿using MAUISampleApp.MVVM.Models.Enums;
+using MAUISampleApp.MVVM.Services.Interfaces;
 
 namespace MAUISampleApp.MVVM.Services.Implementations
 {
@@ -22,16 +23,26 @@ namespace MAUISampleApp.MVVM.Services.Implementations
                 Console.WriteLine("Internet access has been lost.");
         }
 
+
         public bool IsNetworkAvailable()
         {
             bool result = false;
-            if (accessType == NetworkAccess.Internet) 
-            {
-                // Connection to internet is available
+            if (accessType == NetworkAccess.Internet)
                 result = true;
-            }
 
             return result;
+        }
+
+        public NetworkStatus GetNetworkStatus()
+        {
+            if (accessType == NetworkAccess.Internet)
+                return NetworkStatus.Available;
+
+            else if (accessType == NetworkAccess.ConstrainedInternet)
+                return NetworkStatus.SlowNetwork;
+
+            else
+                return NetworkStatus.NotAvailable;
         }
     }
 }

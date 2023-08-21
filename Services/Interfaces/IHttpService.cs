@@ -4,8 +4,7 @@
     {
         Task<HttpResponseMessage> GetAsync(string url);
 
-        Task<HttpResponseMessage> PostAsync(string url, object data);
+        Task<HttpResponseMessage> PostAsync(string url, HttpContent data);
 
-        `
     }
 }

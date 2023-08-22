@@ -5,10 +5,15 @@ namespace MAUISampleApp.MVVM.Services.Implementations
 {
     public class HttpService : IHttpService
     {
-        HttpClient _httpClient;
+        private readonly HttpClient _httpClient;
         HttpService()
         {
             _httpClient = new HttpClient();
+        }
+
+        ~HttpService()
+        {
+            _httpClient = null;
         }
         public async Task<HttpResponseMessage> GetAsync(string url)
         {

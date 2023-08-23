@@ -1,6 +1,7 @@
 ﻿//using CommunityToolkit.Maui;
 //using CommunityToolkit.Maui.Core;
 //using CommunityToolkit.Maui.Markup;
+using MAUISampleApp.MVVM.Handlers;
 using MAUISampleApp.MVVM.Services.Implementations;
 using MAUISampleApp.MVVM.Services.Interfaces;
 using MAUISampleApp.MVVM.ViewModels;
@@ -49,6 +50,7 @@ public static class MauiProgram
             //.UseMauiCommunityToolkit()
             //.UseMauiCommunityToolkitMarkup()
             //.UseMauiCommunityToolkitCore()
+            .UseProgressBar()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -97,4 +99,6 @@ public static class MauiProgram
 
         return builder.Build();
     }
+
+
 }

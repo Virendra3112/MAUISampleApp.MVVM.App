@@ -1,4 +1,5 @@
-﻿using MAUISampleApp.MVVM.Services.Interfaces;
+﻿using CommunityToolkit.Maui.Views;
+using MAUISampleApp.MVVM.Services.Interfaces;
 
 namespace MAUISampleApp.MVVM.Services.Implementations
 {

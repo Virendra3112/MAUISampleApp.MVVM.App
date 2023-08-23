@@ -65,6 +65,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="MetroLog.Net6" Version="2.1.0" />
+	  <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.5" />
 	</ItemGroup>
 
 	<ItemGroup>

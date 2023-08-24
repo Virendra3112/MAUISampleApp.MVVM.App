@@ -1,10 +1,5 @@
 ﻿using MAUISampleApp.MVVM.CustomControls;
 using SkiaSharp.Views.Maui.Handlers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MAUISampleApp.MVVM.Handlers
 {

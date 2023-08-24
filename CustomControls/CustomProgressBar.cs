@@ -50,7 +50,7 @@ namespace MAUISampleApp.MVVM.CustomControls
 
         private static void OnBindablePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            throw new NotImplementedException();
+            ((CustomProgressBar)bindable).InvalidateSurface();
         }
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
@@ -76,6 +76,22 @@ namespace MAUISampleApp.MVVM.CustomControls
                 Style = SKPaintStyle.Fill,
                 Color = BaseColor.ToSKColor(),
                 IsAntialias = true
+            });
+        }
+
+        private void DrawProgress()
+        {
+            using var progressPath = new SKPath();
+
+            var progressRect = new SKRect(0, 0, _info.Width * Progress, _info.Height);
+
+            progressPath.AddRect(progressRect);
+
+            _canvas.DrawPath(progressPath, new SKPaint
+            {
+                Style = SKPaintStyle.Fill,
+                IsAntialias = true,
+                Color = ProgressColor.ToSKColor()
             });
         }
 

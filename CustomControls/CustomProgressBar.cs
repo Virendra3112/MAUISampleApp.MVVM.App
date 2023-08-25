@@ -1,11 +1,6 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using SkiaSharp.Views.Maui.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MAUISampleApp.MVVM.CustomControls
 {
@@ -63,6 +58,7 @@ namespace MAUISampleApp.MVVM.CustomControls
             _drawRect = new SKRect(0, 0, _info.Width, _info.Height);
 
             DrawBase();
+            DrawProgress();
         }
 
         private void DrawBase()

@@ -23,8 +23,8 @@ namespace MAUISampleApp.MVVM.ViewModels
 
             CategoryList = new ObservableCollection<DashboardItem>
             {
-                new DashboardItem { ItemName = "Custom UI", Itemicon = "icon.png", page = new CustomNavigationBar() },
-                new DashboardItem { ItemName = "1 Item", Itemicon = "icon.png" },
+                new DashboardItem { ItemName = "Custom NavigationBar", Itemicon = "icon.png", page = new CustomNavigationBar() },
+                new DashboardItem { ItemName = "Custom Controls", Itemicon = "icon.png", page  = new CustomControlsSamplePage() },
                 new DashboardItem { ItemName = "2 Item", Itemicon = "icon.png" },
                 new DashboardItem { ItemName = "3 Item", Itemicon = "icon.png" }
             };

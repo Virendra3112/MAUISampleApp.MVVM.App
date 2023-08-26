@@ -8,5 +8,9 @@ namespace MAUISampleApp.MVVM.ViewModels
 {
     public class CustomControlsSampleViewModel : BaseViewModel
     {
+        public CustomControlsSampleViewModel()
+        {
+            
+        }
     }
 }

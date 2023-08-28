@@ -30,8 +30,33 @@ namespace MAUISampleApp.MVVM.ViewModels
 
         private async Task UpdateProgress()
         {
-            //ToDo
-            throw new NotImplementedException();
+            try
+            {
+                await Task.Delay(100);
+                Progress = 0.1f;
+                
+                await Task.Delay(100);
+                Progress = 0.2f;
+                
+                await Task.Delay(100);
+                Progress = 0.3f;
+                
+                await Task.Delay(100);
+                Progress = 0.4f;
+                
+                await Task.Delay(100);
+                Progress = 0.6f;
+                
+                await Task.Delay(100);
+                Progress = 0.8f;
+                
+                await Task.Delay(100);
+                Progress = 1.0f;
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }

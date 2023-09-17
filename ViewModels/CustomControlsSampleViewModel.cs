@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace MAUISampleApp.MVVM.ViewModels
 {
@@ -28,32 +23,42 @@ namespace MAUISampleApp.MVVM.ViewModels
             ProgressCommand.Execute(null);
         }
 
+        public override void OnViewModelAppearing()
+        {
+            base.OnViewModelAppearing();
+        }
+
+        public override void OnViewModelDisAppearing()
+        {
+            base.OnViewModelDisAppearing();
+        }
+
         private async Task UpdateProgress()
         {
             try
             {
                 await Task.Delay(100);
                 Progress = 0.1f;
-                
+
                 await Task.Delay(100);
                 Progress = 0.2f;
-                
+
                 await Task.Delay(100);
                 Progress = 0.3f;
-                
+
                 await Task.Delay(100);
                 Progress = 0.4f;
-                
+
                 await Task.Delay(100);
                 Progress = 0.6f;
-                
+
                 await Task.Delay(100);
                 Progress = 0.8f;
-                
+
                 await Task.Delay(100);
                 Progress = 1.0f;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }

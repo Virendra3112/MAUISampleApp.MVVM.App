@@ -35,5 +35,16 @@ namespace MAUISampleApp.MVVM.ViewModels
             }
         }
 
+        public virtual void OnViewModelAppearing()
+        {
+
+        }
+
+        public virtual void OnViewModelDisAppearing()
+        {
+
+        }
+
+
     }
 }

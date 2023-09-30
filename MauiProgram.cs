@@ -9,6 +9,7 @@ using MAUISampleApp.MVVM.Views;
 using MetroLog;
 using MetroLog.MicrosoftExtensions;
 using MetroLog.Targets;
+using Microsoft.Maui.Handlers;
 
 namespace MAUISampleApp.MVVM;
 
@@ -47,9 +48,14 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
-            //.UseMauiCommunityToolkit()
-            //.UseMauiCommunityToolkitMarkup()
-            //.UseMauiCommunityToolkitCore()
+             //.UseMauiCommunityToolkit()
+             //.UseMauiCommunityToolkitMarkup()
+             //.UseMauiCommunityToolkitCore()
+
+             //.ConfigureMauiHandlers(handlers =>
+             //{
+             //    handlers.AddHandler(typeof(CustomEntry), typeof(EntryHandler));
+             //})
             .UseProgressBar()
             .ConfigureFonts(fonts =>
             {

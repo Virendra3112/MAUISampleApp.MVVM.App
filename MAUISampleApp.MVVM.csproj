@@ -114,4 +114,8 @@
 	  <Folder Include="Platforms\Android\Helpers\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Foxit.AndroidBinding\Foxit.AndroidBinding.csproj" />
+	</ItemGroup>
+
 </Project>

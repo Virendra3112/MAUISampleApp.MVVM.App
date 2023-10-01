@@ -104,6 +104,9 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<CustomControlsSamplePage>();
         builder.Services.AddSingleton<CustomControlsSampleViewModel>();
+         
+        builder.Services.AddSingleton<FoxitSamplePage>();
+        builder.Services.AddSingleton<FoxitSampleViewModel>();
 
 
         return builder.Build();

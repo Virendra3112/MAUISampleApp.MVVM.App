@@ -25,7 +25,7 @@ namespace MAUISampleApp.MVVM.ViewModels
             {
                 new DashboardItem { ItemName = "Custom NavigationBar", Itemicon = "icon.png", page = new CustomNavigationBar() },
                 new DashboardItem { ItemName = "Custom Controls", Itemicon = "icon.png", page  = new CustomControlsSamplePage() },
-                new DashboardItem { ItemName = "2 Item", Itemicon = "icon.png" },
+                new DashboardItem { ItemName = "Foxit PDF", Itemicon = "icon.png", page = new FoxitSamplePage() },
                 new DashboardItem { ItemName = "3 Item", Itemicon = "icon.png" }
             };
         }

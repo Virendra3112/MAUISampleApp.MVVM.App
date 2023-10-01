@@ -64,6 +64,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Views\FoxitSamplePage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Views\FoxitSamplePage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="MetroLog.Net6" Version="2.1.0" />
 	  <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.5" />
 	</ItemGroup>

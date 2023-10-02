@@ -8,5 +8,9 @@ namespace MAUISampleApp.MVVM.ViewModels
 {
     public class FoxitSampleViewModel : BaseViewModel
     {
+        public FoxitSampleViewModel()
+        {
+
+        }
     }
 }
